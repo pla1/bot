@@ -1,0 +1,29 @@
+{
+  "name": "bot",
+  "version": "0.0.1",
+  "description": "Fediverse bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pla1/bot.git"
+  },
+  "keywords": [
+    "bot",
+    "fediverse",
+    "pleroma",
+    "mastodon"
+  ],
+  "author": "Patrick L Archibald (PLA)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pla1/bot/issues"
+  },
+  "homepage": "https://github.com/pla1/bot#readme",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "mastodon-api": "^1.3.0"
+  }
+}
