@@ -5,7 +5,7 @@ const fs = require('fs');
 
 console.log("Bot starting...")
 
-
+const accessTokenEncoded = encodeURIComponent(process.env.ACCESS_TOKEN);
 
 const M = new Mastodon({
   access_token: process.env.ACCESS_TOKEN,
@@ -37,7 +37,9 @@ M.post('statuses', params, (error, data) => {
 });
 
 
-const listener = M.stream('streaming?stream=public:local')
+// const listener = M.stream('streaming?stream=public:local')
+
+const listener = M.stream(`streaming?stream=user&access_token=${accessTokenEncoded}`)
 
 listener.on('message', msg => console.log(msg))
 
