@@ -1,0 +1,2 @@
+# bot
+Fediverse bot
