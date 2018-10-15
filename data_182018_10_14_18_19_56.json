@@ -20,7 +20,7 @@
       "privacy": "public",
       "sensitive": false
     },
-    "statuses_count": 161,
+    "statuses_count": 115,
     "url": "https://pla.social/users/bot",
     "username": "bot"
   },
@@ -28,22 +28,32 @@
     "name": "Web",
     "website": null
   },
-  "content": "Weather for Seattle<br />Temperature: 16.48°C 61.66°F<br />Conditions: Clear<br />Sunrise: Mon, 15 Oct 2018 14:28:23 GMT<br />Sunset: Tue, 16 Oct 2018 01:20:51 GMT<br />Date: Mon, 15 Oct 2018 00:58:00 GMT",
-  "created_at": "2018-10-15T01:26:04.000Z",
+  "content": "Here is the SE radar",
+  "created_at": "2018-10-14T22:19:56.000Z",
   "emojis": [],
   "favourited": false,
   "favourites_count": 0,
-  "id": "828376",
-  "in_reply_to_account_id": "1",
-  "in_reply_to_id": "828374",
+  "id": "827224",
+  "in_reply_to_account_id": "6275",
+  "in_reply_to_id": "827222",
   "language": null,
-  "media_attachments": [],
+  "media_attachments": [
+    {
+      "description": "Southeast radar animated GIF",
+      "id": "97502914",
+      "preview_url": "https://pla.social/media/46440629-e7a8-4c1d-a598-ad8296c5b137/radar_182018_10_14_18_19_55.gif",
+      "remote_url": "https://pla.social/media/46440629-e7a8-4c1d-a598-ad8296c5b137/radar_182018_10_14_18_19_55.gif",
+      "text_url": "https://pla.social/media/46440629-e7a8-4c1d-a598-ad8296c5b137/radar_182018_10_14_18_19_55.gif",
+      "type": "image",
+      "url": "https://pla.social/media/46440629-e7a8-4c1d-a598-ad8296c5b137/radar_182018_10_14_18_19_55.gif"
+    }
+  ],
   "mentions": [
     {
-      "acct": "pla",
-      "id": "1",
-      "url": "https://pla.social/users/pla",
-      "username": "pla"
+      "acct": "pla2@mastodon.social",
+      "id": "6275",
+      "url": "https://mastodon.social/users/pla2",
+      "username": "pla2"
     }
   ],
   "muted": false,
@@ -54,7 +64,7 @@
   "sensitive": false,
   "spoiler_text": "",
   "tags": [],
-  "uri": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "url": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "visibility": "direct"
+  "uri": "https://pla.social/objects/9764c95b-4608-4557-98c1-928680c9a41f",
+  "url": "https://pla.social/objects/9764c95b-4608-4557-98c1-928680c9a41f",
+  "visibility": "public"
 }

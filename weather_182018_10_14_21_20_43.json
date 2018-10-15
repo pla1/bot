@@ -1,0 +1,42 @@
+{
+  "coord": {
+    "lon": -79.96,
+    "lat": 33.31
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 20.15,
+    "pressure": 1021,
+    "humidity": 100,
+    "temp_min": 17,
+    "temp_max": 22
+  },
+  "visibility": 16093,
+  "wind": {
+    "speed": 2.81,
+    "deg": 123.504
+  },
+  "clouds": {
+    "all": 1
+  },
+  "dt": 1539564900,
+  "sys": {
+    "type": 1,
+    "id": 2400,
+    "message": 0.0038,
+    "country": "US",
+    "sunrise": 1539602663,
+    "sunset": 1539643574
+  },
+  "id": 4570707,
+  "name": "Bonneau",
+  "cod": 200
+}

@@ -8,7 +8,7 @@
     "display_name": "bot",
     "emojis": [],
     "fields": [],
-    "followers_count": 2,
+    "followers_count": 1,
     "following_count": 1,
     "header": "https://pla.social/images/banner.png",
     "header_static": "https://pla.social/images/banner.png",
@@ -20,7 +20,7 @@
       "privacy": "public",
       "sensitive": false
     },
-    "statuses_count": 161,
+    "statuses_count": 53,
     "url": "https://pla.social/users/bot",
     "username": "bot"
   },
@@ -28,22 +28,22 @@
     "name": "Web",
     "website": null
   },
-  "content": "Weather for Seattle<br />Temperature: 16.48°C 61.66°F<br />Conditions: Clear<br />Sunrise: Mon, 15 Oct 2018 14:28:23 GMT<br />Sunset: Tue, 16 Oct 2018 01:20:51 GMT<br />Date: Mon, 15 Oct 2018 00:58:00 GMT",
-  "created_at": "2018-10-15T01:26:04.000Z",
+  "content": "You said You said You said You said You said You said You said You said The date is: Sun Oct 14 2018 16:51:30 GMT-0400 (EDT)",
+  "created_at": "2018-10-14T20:51:31.000Z",
   "emojis": [],
   "favourited": false,
   "favourites_count": 0,
-  "id": "828376",
-  "in_reply_to_account_id": "1",
-  "in_reply_to_id": "828374",
+  "id": "826335",
+  "in_reply_to_account_id": "21957",
+  "in_reply_to_id": "826333",
   "language": null,
   "media_attachments": [],
   "mentions": [
     {
-      "acct": "pla",
-      "id": "1",
-      "url": "https://pla.social/users/pla",
-      "username": "pla"
+      "acct": "bot",
+      "id": "21957",
+      "url": "https://pla.social/users/bot",
+      "username": "bot"
     }
   ],
   "muted": false,
@@ -54,7 +54,7 @@
   "sensitive": false,
   "spoiler_text": "",
   "tags": [],
-  "uri": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "url": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "visibility": "direct"
+  "uri": "https://pla.social/objects/545cdf9a-381b-455d-905d-16a67b61bd5b",
+  "url": "https://pla.social/objects/545cdf9a-381b-455d-905d-16a67b61bd5b",
+  "visibility": "unlisted"
 }

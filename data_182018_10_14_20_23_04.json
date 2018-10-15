@@ -20,7 +20,7 @@
       "privacy": "public",
       "sensitive": false
     },
-    "statuses_count": 161,
+    "statuses_count": 127,
     "url": "https://pla.social/users/bot",
     "username": "bot"
   },
@@ -28,24 +28,17 @@
     "name": "Web",
     "website": null
   },
-  "content": "Weather for Seattle<br />Temperature: 16.48°C 61.66°F<br />Conditions: Clear<br />Sunrise: Mon, 15 Oct 2018 14:28:23 GMT<br />Sunset: Tue, 16 Oct 2018 01:20:51 GMT<br />Date: Mon, 15 Oct 2018 00:58:00 GMT",
-  "created_at": "2018-10-15T01:26:04.000Z",
+  "content": "The date is: Sun Oct 14 2018 20:23:04 GMT-0400 (EDT)",
+  "created_at": "2018-10-15T00:23:04.000Z",
   "emojis": [],
   "favourited": false,
   "favourites_count": 0,
-  "id": "828376",
-  "in_reply_to_account_id": "1",
-  "in_reply_to_id": "828374",
+  "id": "827959",
+  "in_reply_to_account_id": null,
+  "in_reply_to_id": null,
   "language": null,
   "media_attachments": [],
-  "mentions": [
-    {
-      "acct": "pla",
-      "id": "1",
-      "url": "https://pla.social/users/pla",
-      "username": "pla"
-    }
-  ],
+  "mentions": [],
   "muted": false,
   "reblog": null,
   "reblogged": false,
@@ -54,7 +47,7 @@
   "sensitive": false,
   "spoiler_text": "",
   "tags": [],
-  "uri": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "url": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "visibility": "direct"
+  "uri": "https://pla.social/objects/0b469a68-ee0f-49fd-b304-16ef7a10a430",
+  "url": "https://pla.social/objects/0b469a68-ee0f-49fd-b304-16ef7a10a430",
+  "visibility": "unlisted"
 }

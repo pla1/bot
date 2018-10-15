@@ -20,7 +20,7 @@
       "privacy": "public",
       "sensitive": false
     },
-    "statuses_count": 161,
+    "statuses_count": 126,
     "url": "https://pla.social/users/bot",
     "username": "bot"
   },
@@ -28,14 +28,14 @@
     "name": "Web",
     "website": null
   },
-  "content": "Weather for Seattle<br />Temperature: 16.48°C 61.66°F<br />Conditions: Clear<br />Sunrise: Mon, 15 Oct 2018 14:28:23 GMT<br />Sunset: Tue, 16 Oct 2018 01:20:51 GMT<br />Date: Mon, 15 Oct 2018 00:58:00 GMT",
-  "created_at": "2018-10-15T01:26:04.000Z",
+  "content": "undefined",
+  "created_at": "2018-10-15T00:20:35.000Z",
   "emojis": [],
   "favourited": false,
   "favourites_count": 0,
-  "id": "828376",
+  "id": "827952",
   "in_reply_to_account_id": "1",
-  "in_reply_to_id": "828374",
+  "in_reply_to_id": "827949",
   "language": null,
   "media_attachments": [],
   "mentions": [
@@ -54,7 +54,7 @@
   "sensitive": false,
   "spoiler_text": "",
   "tags": [],
-  "uri": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "url": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "visibility": "direct"
+  "uri": "https://pla.social/objects/16cea8ae-28f0-4703-b1f1-7848dc8aa478",
+  "url": "https://pla.social/objects/16cea8ae-28f0-4703-b1f1-7848dc8aa478",
+  "visibility": "unlisted"
 }

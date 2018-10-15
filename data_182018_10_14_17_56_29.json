@@ -20,7 +20,7 @@
       "privacy": "public",
       "sensitive": false
     },
-    "statuses_count": 161,
+    "statuses_count": 99,
     "url": "https://pla.social/users/bot",
     "username": "bot"
   },
@@ -28,16 +28,26 @@
     "name": "Web",
     "website": null
   },
-  "content": "Weather for Seattle<br />Temperature: 16.48°C 61.66°F<br />Conditions: Clear<br />Sunrise: Mon, 15 Oct 2018 14:28:23 GMT<br />Sunset: Tue, 16 Oct 2018 01:20:51 GMT<br />Date: Mon, 15 Oct 2018 00:58:00 GMT",
-  "created_at": "2018-10-15T01:26:04.000Z",
+  "content": "Here is the SE radar",
+  "created_at": "2018-10-14T21:56:29.000Z",
   "emojis": [],
   "favourited": false,
   "favourites_count": 0,
-  "id": "828376",
+  "id": "827023",
   "in_reply_to_account_id": "1",
-  "in_reply_to_id": "828374",
+  "in_reply_to_id": "827020",
   "language": null,
-  "media_attachments": [],
+  "media_attachments": [
+    {
+      "description": "Southeast radar animated GIF",
+      "id": "-1959185600",
+      "preview_url": "https://pla.social/media/525f7c71-ad45-4139-9834-e1187e13072c/radar_182018_10_14_17_56_29.gif",
+      "remote_url": "https://pla.social/media/525f7c71-ad45-4139-9834-e1187e13072c/radar_182018_10_14_17_56_29.gif",
+      "text_url": "https://pla.social/media/525f7c71-ad45-4139-9834-e1187e13072c/radar_182018_10_14_17_56_29.gif",
+      "type": "image",
+      "url": "https://pla.social/media/525f7c71-ad45-4139-9834-e1187e13072c/radar_182018_10_14_17_56_29.gif"
+    }
+  ],
   "mentions": [
     {
       "acct": "pla",
@@ -54,7 +64,7 @@
   "sensitive": false,
   "spoiler_text": "",
   "tags": [],
-  "uri": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "url": "https://pla.social/objects/dc317548-9f05-47d2-b57f-1f6c5a0e10ef",
-  "visibility": "direct"
+  "uri": "https://pla.social/objects/7ec9a240-15a3-430d-81f1-0387d350b2e2",
+  "url": "https://pla.social/objects/7ec9a240-15a3-430d-81f1-0387d350b2e2",
+  "visibility": "unlisted"
 }

@@ -1,0 +1,42 @@
+{
+  "coord": {
+    "lon": -5.19,
+    "lat": 36.62
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 17.34,
+    "pressure": 1014,
+    "humidity": 59,
+    "temp_min": 16,
+    "temp_max": 18
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 4.6,
+    "deg": 280
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1539565200,
+  "sys": {
+    "type": 1,
+    "id": 5489,
+    "message": 0.0032,
+    "country": "ES",
+    "sunrise": 1539584877,
+    "sunset": 1539625473
+  },
+  "id": 2511730,
+  "name": "Marbella",
+  "cod": 200
+}
