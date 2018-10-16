@@ -1,13 +1,18 @@
 require('dotenv').config();
 const Mastodon = require('mastodon-api');
 const WebSocket = require('ws');
+
 const fs = require('fs');
 const moment = require('moment');
-const ws = new WebSocket(`wss://pla.social/api/v1/streaming/?stream=user&access_token=${process.env.ACCESS_TOKEN}`);
+var urlWebSocket = `wss://pla.social/api/v1/streaming/?stream=user&access_token=${process.env.ACCESS_TOKEN}`;
+const ws = new WebSocket(urlWebSocket);
 const download = require('image-downloader')
 const sanitizeHtml = require('sanitize-html');
 const http = require('request');
 const https = require('https');
+
+const ping = require("net-ping");
+const sessionPing = ping.createSession();
 
 
 console.log("Bot starting...")
@@ -115,6 +120,8 @@ ws.on('close', function close() {
   console.log('disconnected');
 });
 
+
+
 function clean(html) {
   var clean = sanitizeHtml(html, {
     allowedTags: [],
@@ -150,6 +157,20 @@ async function openweathermapSAVE(city) {
   var msg = "Return outside of http";
   console.log(msg);
   return msg;
+}
+
+function pingIt(id, ipAddress) {
+  sessionPing.pingHost(ipAddress, function(error, target) {
+    if (error) {
+      var msg = `✗ ${target} ${error.toString()}`;
+      console.log(msg);
+      toot(msg, id);
+    } else {
+      var msg = `✔ ${target} is alive`;
+      console.log(msg);
+      toot(msg, id);
+    }
+  });
 }
 
 function openweathermap(id, city) {
@@ -195,7 +216,7 @@ async function weatherWithRadarSAVE(payload) {
 }
 ws.on('message', function incoming(data) {
   if (!data || data.length == 0) {
-    console.log("No data in message.");
+    console.log(`No data in message ${new Date()}`);
     return;
   }
   var obj = JSON.parse(data);
@@ -207,15 +228,21 @@ ws.on('message', function incoming(data) {
     return;
   }
   if (payload.content) {
-    favorite(payload.id);
+    //  favorite(payload.id);
     var said = clean(payload.content);
     console.log(`BEFORE: ${payload.content} AFTER: ${said}`);
     if (said.startsWith('weather')) {
       var content = said.substring('weather'.length).trim();
       openweathermap(payload.id, content);
-    } else {
-      toot(`You said "${said} "`, payload.id);
+      return;
     }
+    if (said.startsWith('ping')) {
+      var content = said.substring('ping'.length).trim();
+      pingIt(payload.id, content);
+      return;
+    }
+    toot(`You said "${said}". I don't know how to respond to that.  I can give you weather and I can ping an IP address. Try typing: weather CITY or ping IP`, payload.id);
+
   }
 
 });
