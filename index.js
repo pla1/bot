@@ -31,7 +31,7 @@ const M = new Mastodon({
   api_url: 'https://pla.social/api/v1/'
 });
 
-function httpGet(id, url, query) {
+function httpGet(payload, url, query) {
   https.get(url, (res) => { // <- this is a function that is called when there's a response. Waiting for a response is as easy as writing code inside this function (or use async await)
     console.log('statusCode:', res.statusCode);
     console.log('headers:', res.headers);
@@ -44,7 +44,7 @@ function httpGet(id, url, query) {
       if (weatherResponse.cod != '200') {
         var msg = `Weather lookup for: "${query}" failed with error: ${weatherResponse.message}`;
         console.log(msg);
-        toot(msg, id);
+        toot(msg, payload.id);
         return;
       }
       fs.writeFileSync(`weather_${moment().format("YYY_MM_DD_HH_mm_ss")}.json`, JSON.stringify(weatherResponse, null, 2));
@@ -54,7 +54,8 @@ function httpGet(id, url, query) {
       var date = new Date(weatherResponse.dt * 1000);
       var msg = `Weather for ${weatherResponse.name}\nTemperature: ${weatherResponse.main.temp}°C ${f}°F\nConditions: ${weatherResponse.weather[0].main}\nSunrise: ${sunrise.toUTCString()}\nSunset: ${sunset.toUTCString()}\nDate: ${date.toUTCString()}`;
       console.log(msg);
-      toot(msg, id);
+      toot(msg, payload.id);
+      googleStaticMap(payload, weatherResponse);
     });
 
   }).on('error', (e) => { //the https.get function returns a request that can emit an error event. this is an eventlistener for that. try an invalid url to test this branch of your code
@@ -120,6 +121,13 @@ ws.on('close', function close() {
   console.log('disconnected');
 });
 
+ws.on('pong', function pong() {
+  console.log('pong');
+});
+
+ws.on('ping', function pong() {
+  console.log('ping');
+});
 
 
 function clean(html) {
@@ -173,11 +181,14 @@ function pingIt(id, ipAddress) {
   });
 }
 
-function openweathermap(id, city) {
-  var city = encodeURIComponent(city);
-  var url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&APPID=${process.env.OPENWEATHERMAP_API_KEY}`;
+function openweathermap(payload, query) {
+  var queryEncoded = encodeURIComponent(query);
+  var url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${queryEncoded}&APPID=${process.env.OPENWEATHERMAP_API_KEY}`;
+  if (/\d{5}/.test(query)) {
+    url = `https://api.openweathermap.org/data/2.5/weather?units=metric&zip=${queryEncoded}&APPID=${process.env.OPENWEATHERMAP_API_KEY}`;
+  }
   console.log(url);
-  httpGet(id, url, city);
+  httpGet(payload, url, query);
 }
 
 function fahrenheit(celsius) {
@@ -214,6 +225,37 @@ async function weatherWithRadarSAVE(payload) {
   toot('Here is the SE radar', payload.id, mediaId);
 
 }
+async function googleStaticMap(payload, weatherResponse) {
+  var fileName = `map_${moment().format("YYY_MM_DD_HH_mm_ss")}.png`;
+  var url = `https://maps.googleapis.com/maps/api/staticmap?center=${weatherResponse.coord.lat},${weatherResponse.coord.lon}&zoom=10&key=${process.env.GOOGLE_MAPS_API_KEY}&size=800x450&markers=color:red%7C${weatherResponse.coord.lat},${weatherResponse.coord.lon}`;
+  console.log("Google Static Map URL: ", url);
+  options = {
+    url: url,
+    dest: fileName,
+    headers: {
+      'User-Agent': 'Wget/1.11.4'
+    }
+  }
+  await download.image(options).then(({
+      filename,
+      image
+    }) => {
+      console.log('File saved to', filename)
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+  const stream = fs.createReadStream(fileName);
+  const params1 = {
+    file: stream,
+    description: 'Google static map'
+  };
+  const response2 = await M.post("media", params1);
+  console.log(`Media response: ${response2}`);
+  const mediaId = response2.data.id;
+  toot('Here is a Google static map', payload.id, mediaId);
+
+}
 ws.on('message', function incoming(data) {
   if (!data || data.length == 0) {
     console.log(`No data in message ${new Date()}`);
@@ -227,13 +269,17 @@ ws.on('message', function incoming(data) {
     console.log("Don't talk to myself.");
     return;
   }
+  if (payload.mentions && payload.mentions[0].acct != "bot") {
+    console.log("Bot was not mentioned. Exiting function.");
+    return;
+  }
   if (payload.content) {
     //  favorite(payload.id);
     var said = clean(payload.content);
     console.log(`BEFORE: ${payload.content} AFTER: ${said}`);
     if (said.startsWith('weather')) {
       var content = said.substring('weather'.length).trim();
-      openweathermap(payload.id, content);
+      openweathermap(payload, content);
       return;
     }
     if (said.startsWith('ping')) {
