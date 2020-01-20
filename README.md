@@ -1,4 +1,4 @@
-# bot
+# OBSOLETE bot
 Fediverse bot
 
 10/14/2018 - Weather lookup by typing: `weather London`
